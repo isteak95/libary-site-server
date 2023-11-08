@@ -54,10 +54,10 @@ const BorrowedModal = ({ isOpen, onRequestClose, onBorrow, bookId, book, onBorro
       onRequestClose={onRequestClose}
       contentLabel="Borrow Book"
     >
-      <h2>Borrow Book</h2>
-      <p>Email: {user?.email}</p>
-      <p>Name: {user?.displayName}</p>
-      <div>
+      <h2 className='text-center text-4xl font-bold lg:py-10 lg:mt-60'>Borrow Book</h2>
+      <p className='text-center text-xl font-bold py-2'>Email: {user?.email}</p>
+      <p className='text-center text-xl font-bold '>Name: {user?.displayName}</p>
+      <div className='text-center text-xl font-bold  py-5'>
         <label htmlFor="returnDate">Return Date</label>
         <input
           type="date"
@@ -66,8 +66,8 @@ const BorrowedModal = ({ isOpen, onRequestClose, onBorrow, bookId, book, onBorro
           onChange={(e) => setReturnDate(e.target.value)}
         />
       </div>
-      <div>
-        <label htmlFor="borrowedDate">Borrow Date</label>
+      <div className='lg:pl-[670px] text-xl font-bold md:pl-[200px] ml-20 py-3'>
+        <label htmlFor="borrowedDate">Borrow Date  : </label>
         <input
           type="text"
           id="borrowedDate"
@@ -75,8 +75,8 @@ const BorrowedModal = ({ isOpen, onRequestClose, onBorrow, bookId, book, onBorro
           readOnly // Make it read-only
         />
       </div>
-      <p className="error-message">{errorMessage}</p>
-      <button onClick={handleBorrow}>Borrow</button>
+      <p className="py-5 error-message text-center text-xl">{errorMessage}</p>
+      <button className='btn lg:ml-[790px] md:ml-[230px] ml-16 btn-warning px-16' onClick={handleBorrow}>Borrow</button>
     </Modal>
   );
 };

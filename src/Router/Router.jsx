@@ -33,9 +33,29 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/borrowbook"),
       },
       {
-        path: "read/:bookId",
+        path: "/novel/read/:bookId",
         element: <ReadBook></ReadBook>,
         loader: ({ params }) => fetch(`http://localhost:5000/novel/${params.bookId}`),
+      },
+      {
+        path: "/thriller/read/:bookId",
+        element: <ReadBook></ReadBook>,
+        loader: ({ params }) => fetch(`http://localhost:5000/thriller/${params.bookId}`),
+      },
+      {
+        path: "/history/read/:bookId",
+        element: <ReadBook></ReadBook>,
+        loader: ({ params }) => fetch(`http://localhost:5000/history/${params.bookId}`),
+      },
+      {
+        path: "/drama/read/:bookId",
+        element: <ReadBook></ReadBook>,
+        loader: ({ params }) => fetch(`http://localhost:5000/drama/${params.bookId}`),
+      },
+      {
+        path: "/sci-fi/read/:bookId",
+        element: <ReadBook></ReadBook>,
+        loader: ({ params }) => fetch(`http://localhost:5000/sci-fi/${params.bookId}`),
       },
       {
         path: "/signin",
