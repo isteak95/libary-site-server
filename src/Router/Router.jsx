@@ -1,6 +1,4 @@
-import {
-  createBrowserRouter,
-} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../MainLayout/MainLayout";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
@@ -10,9 +8,7 @@ import Home from "../Pages/Home/Home";
 import BookCategories from "../BookCategories/BookCategories";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import BrooowedBook from "../Pages/BrooowedBook/BrooowedBook";
-
-
-
+import ReadBook from "../Pages/ReadBook/ReadBook";
 
 const router = createBrowserRouter([
   {
@@ -21,84 +17,86 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path: "/addbook",
-        element: <AddBook></AddBook>
+        element: <AddBook></AddBook>,
       },
       {
         path: "/allbook",
-        element: <AllBook></AllBook>
+        element: <AllBook></AllBook>,
       },
       {
-        path : "/borrowedbooks",
-        element : <BrooowedBook></BrooowedBook>,
-        loader: () => fetch("http://localhost:5000/borrowbook")
+        path: "/borrowedbooks",
+        element: <BrooowedBook></BrooowedBook>,
+        loader: () => fetch("http://localhost:5000/borrowbook"),
+      },
+      {
+        path: "read/:bookId",
+        element: <ReadBook></ReadBook>,
+        loader: ({ params }) => fetch(`http://localhost:5000/novel/${params.bookId}`),
       },
       {
         path: "/signin",
-        element: <SignIn></SignIn>
+        element: <SignIn></SignIn>,
       },
       {
         path: "/signup",
-        element: <SignUp></SignUp>
+        element: <SignUp></SignUp>,
       },
       {
-        path : "/novel",
-        element : <BookCategories></BookCategories>,
-        loader: () => fetch("http://localhost:5000/novel")
+        path: "/novel",
+        element: <BookCategories></BookCategories>,
+        loader: () => fetch("http://localhost:5000/novel"),
       },
       {
-        path : "/thriller",
-        element : <BookCategories></BookCategories>,
-        loader: () => fetch("http://localhost:5000/thriller")
+        path: "/thriller",
+        element: <BookCategories></BookCategories>,
+        loader: () => fetch("http://localhost:5000/thriller"),
       },
       {
-        path : "/history",
-        element : <BookCategories></BookCategories>,
-        loader: () => fetch("http://localhost:5000/history")
+        path: "/history",
+        element: <BookCategories></BookCategories>,
+        loader: () => fetch("http://localhost:5000/history"),
       },
       {
-        path : "/drama",
-        element : <BookCategories></BookCategories>,
-        loader: () => fetch("http://localhost:5000/drama")
+        path: "/drama",
+        element: <BookCategories></BookCategories>,
+        loader: () => fetch("http://localhost:5000/drama"),
       },
       {
-        path : "/sci-fi",
-        element : <BookCategories></BookCategories>,
-        loader: () => fetch("http://localhost:5000/sci-fi")
+        path: "/sci-fi",
+        element: <BookCategories></BookCategories>,
+        loader: () => fetch("http://localhost:5000/sci-fi"),
       },
       {
         path: "/novel/details/:bookId",
         element: <BookDetails></BookDetails>,
-        loader: () => fetch('http://localhost:5000/novel')
+        loader: () => fetch("http://localhost:5000/novel"),
       },
       {
         path: "/thriller/details/:bookId",
         element: <BookDetails></BookDetails>,
-        loader: () => fetch("http://localhost:5000/thriller")
+        loader: () => fetch("http://localhost:5000/thriller"),
       },
       {
         path: "/history/details/:bookId",
         element: <BookDetails></BookDetails>,
-        loader: () => fetch("http://localhost:5000/history")
+        loader: () => fetch("http://localhost:5000/history"),
       },
       {
         path: "/drama/details/:bookId",
         element: <BookDetails></BookDetails>,
-        loader: () => fetch("http://localhost:5000/drama")
+        loader: () => fetch("http://localhost:5000/drama"),
       },
       {
         path: "/sci-fi/details/:bookId",
         element: <BookDetails></BookDetails>,
-        loader: () => fetch("http://localhost:5000/sci-fi")
+        loader: () => fetch("http://localhost:5000/sci-fi"),
       },
-
-    ]
+    ],
   },
 ]);
-
-
 
 export default router;

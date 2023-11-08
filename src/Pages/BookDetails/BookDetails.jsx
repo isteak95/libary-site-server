@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams, useLoaderData } from "react-router-dom";
+import { useParams, useLoaderData, Link } from "react-router-dom";
 import BorrowModal from "../BorrowedModal/BorrowedModal";
 
 const BookDetails = () => {
@@ -79,13 +79,13 @@ const BookDetails = () => {
                 </button>
               </div>
               <div className="card-actions justify-end mt-10">
-                <button
+             <Link to={`/read/${book._id}`}>
+             <button
                   className="btn btn-active btn-accent lg:px-[140px]"
-                  onClick={handleBorrow}
-                  disabled={book.quantity === 0}
                 >
                   Read This Book
                 </button>
+             </Link>
               </div>
               <div className="category-badge">
                 <span>{book.category}</span>
