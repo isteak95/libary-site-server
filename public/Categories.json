@@ -1,0 +1,30 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "name": "novel",
+        "image": "https://i.ibb.co/M7ZJyDd/00-story.webp"
+      },
+      {
+        "id": 2,
+        "name": "thriller",
+        "image": "https://i.ibb.co/Zmh69v5/00-THRILLERS-TOPTEN-GRID-video-Sixteen-By-Nine-Jumbo1600.jpg"
+      },
+      {
+        "id": 3,
+        "name": "history",
+        "image": "https://i.ibb.co/ZgrMRgx/history-past-knowledge-books-board-stack.jpg"
+      },
+      {
+        "id": 4,
+        "name": "drama",
+        "image": "https://i.ibb.co/w00vsLS/images.jpg"
+      },
+      {
+        "id": 5,
+        "name": "sci-fi",
+        "image": "https://i.ibb.co/SfSWPkD/sm-020ae4e433b7-best-scifi-lowres.jpg"
+      }
+    ]
+  }
+  
