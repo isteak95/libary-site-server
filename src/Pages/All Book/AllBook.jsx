@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import  { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ReactRating from 'react-rating'; // Import the ReactRating component
 import { useLoaderData } from 'react-router-dom';
@@ -15,9 +15,9 @@ const AllBook = () => {
 
     return (
         <div>
-            <h1 className='text-center text-4xl font-bold py-5'>All Books</h1>
-            <div className='flex justify-center pt-10'>
-                <button className='btn btn-secondary text-xl font-bold' onClick={handleFilter}>
+            <h1 className="text-center text-4xl font-bold py-5">All Books</h1>
+            <div className="flex justify-center pt-10">
+                <button className="btn btn-secondary text-xl font-bold" onClick={handleFilter}>
                     {showAvailableOnly ? 'Show All Books' : 'Show Available Books'}
                 </button>
             </div>
@@ -37,7 +37,6 @@ const AllBook = () => {
                                     fullSymbol="fas fa-star fa-2x" // Correct full star icon (Font Awesome class)
                                     readonly // Make the rating read-only
                                 />
-
                             </p>
                             <Link to={`/${book.Category}/update/${book._id}`}>
                                 <button className="btn btn-accent w-full">Update Book</button>

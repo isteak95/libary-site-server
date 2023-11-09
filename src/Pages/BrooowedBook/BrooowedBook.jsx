@@ -1,26 +1,41 @@
+import  { useState } from 'react';
+import Swal from 'sweetalert2';
 import { useLoaderData } from "react-router-dom";
-import { useState } from "react";
 
 const BorrowedBooks = () => {
-  const [borrowedBooks, setBorrowedBooks] = useState(useLoaderData());
+  const initialBorrowedBooks = useLoaderData();
+  const [borrowedBooks, setBorrowedBooks] = useState(initialBorrowedBooks);
 
-  const handleReturnBook = (bookItemId) => {
-    // Find the index of the book item to return in the borrowedBooks array
-    const bookIndex = borrowedBooks.findIndex((item) => item._id === bookItemId);
+  const handleReturnBook = (_id) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, return it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/allbook/${_id}`, {
+          method: 'DELETE',
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data)
+            if (data.deletedCount > 0) {
+              handleRemoveBookFromList(_id);
+            } else {
+              Swal.fire('Error!', 'An error occurred while returning the book.', 'error');
+            }
+          });
+      }
+    });
+  };
 
-    if (bookIndex !== -1) {
-      // Create a copy of the borrowedBooks array
-      const updatedBorrowedBooks = [...borrowedBooks];
-      
-      // Increase the quantity of the returned book by 1
-      updatedBorrowedBooks[bookIndex].book.quantity += 1;
-      
-      // Remove the book card from the "Borrowed Books" page
-      updatedBorrowedBooks.splice(bookIndex, 1);
-      
-      // Update the state with the modified array
-      setBorrowedBooks(updatedBorrowedBooks);
-    }
+  const handleRemoveBookFromList = (_id) => {
+    const updatedBorrowedBooks = borrowedBooks.filter((bookItem) => bookItem._id !== _id);
+    setBorrowedBooks(updatedBorrowedBooks);
   };
 
   return (

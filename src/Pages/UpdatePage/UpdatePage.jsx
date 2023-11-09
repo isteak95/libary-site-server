@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const UpdateProduct = () => {
     const [brand, setBrand] = useState('');
@@ -41,6 +43,14 @@ const UpdateProduct = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
+                toast.success(`Added ${updatedBook.name} to the Book`, {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                  });
                 form.reset();
                 setBrand('');
                
@@ -52,6 +62,11 @@ const UpdateProduct = () => {
 
     return (
         <div className="lg:mx-[290px] lg:my-[180px] md:mx-16">
+              <Toaster position="top-right" reverseOrder={false}    autoClose={300}
+      hideProgressBar={false}
+      closeOnClick={true}
+      pauseOnHover ={true}
+      draggable={true}/>
             <h1 className="text-center text-5xl font-bold my-10">Update Product</h1>
             <div className="bg-base-200">
                 <div className="">
