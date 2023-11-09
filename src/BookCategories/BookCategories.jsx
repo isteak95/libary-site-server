@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
-
+import ReactRating from 'react-rating';
 const BookCategories = () => {
 
 
@@ -27,11 +27,17 @@ const BookCategories = () => {
                         <div key={Category._id} className="card lg:w-96 bg-base-100 shadow-xl">
                             <div className="card-body">
                                 <img className="h-[400px]" src={Category.image} alt={Category.name} />
-                                <h3 className="text-2xl font-bold">{Category.name}</h3>                <h3 className="text-2xl font-bold">{Category.name}</h3>
+                                <h3 className="text-2xl font-bold">{Category.name}</h3>
+                                <h3 className="text-2xl font-bold">{Category.anotherName}</h3>
 
                                 <p className="text-xl font-semibold"> Category: {Category.Category}</p>
                                 {/* <p className="text-xl font-semibold">Price: ${Category.price}</p> */}
-                                <p className="text-xl font-semibold">Rating: {Category.rating}</p>
+                                <p className="text-xl font-semibold">Rating:     <ReactRating
+                                    initialRating={Category.rating} // Rating value (e.g., 3.5)
+                                    emptySymbol="far fa-star fa-2x" // Correct empty star icon (Font Awesome class)
+                                    fullSymbol="fas fa-star fa-2x" // Correct full star icon (Font Awesome class)
+                                    readonly // Make the rating read-only
+                                /></p>
                                 <Link to={`/${Category.Category}/details/${Category._id}`}>
                                     <button className="btn btn-accent w-full">Details</button>
                                 </Link>

@@ -10,6 +10,7 @@ import BookDetails from "../Pages/BookDetails/BookDetails";
 import BrooowedBook from "../Pages/BrooowedBook/BrooowedBook";
 import ReadBook from "../Pages/ReadBook/ReadBook";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import UpdatePage from "../Pages/UpdatePage/UpdatePage";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/allbook",
         element: <PrivateRoute><AllBook></AllBook></PrivateRoute>,
+        loader: () => fetch("http://localhost:5000/allbook")
       },
       {
         path: "/borrowedbooks",
@@ -116,6 +118,32 @@ const router = createBrowserRouter([
         element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
         loader: () => fetch("http://localhost:5000/sci-fi"),
       },
+      {
+        path: "/novel/update/:bookId",
+        element: <PrivateRoute><UpdatePage></UpdatePage></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/novel/${params.bookId}`) 
+      },
+      {
+        path: "/thriller/update/:bookId",
+        element: <PrivateRoute><UpdatePage></UpdatePage></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/thriller/${params.bookId}`)
+      },
+      {
+        path: "/history/update/:bookId",
+        element: <PrivateRoute><UpdatePage></UpdatePage></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/history/${params.bookId}`) 
+      },
+      {
+        path: "/drama/update/:bookId",
+        element: <PrivateRoute><UpdatePage></UpdatePage></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/drama/${params.bookId}`) 
+      },
+      {
+        path: "/sci-fi/update/:bookId",
+        element: <PrivateRoute><UpdatePage></UpdatePage></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/sci-fi/${params.bookId}`) 
+      },
+      
     ],
   },
 ]);

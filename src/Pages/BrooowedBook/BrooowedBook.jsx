@@ -37,7 +37,7 @@ const BorrowedBooks = () => {
               <div>
                 <figure>
                   <img
-                    className="lg:h-[350px] lg:w-[330px] md:h-[220px] md:w-[150px]"
+                    className="lg:h-[450px] lg:w-[330px] md:h-[220px] md:w-[150px]"
                     src={bookItem.book.image}
                     alt={bookItem.book.name}
                   />
@@ -45,7 +45,7 @@ const BorrowedBooks = () => {
               </div>
               <div className="lg:w-[350px] md:w-[350px]">
                 <h1 className="lg:text-xl text-center font-bold lg:my-9 md:my-4 my-2">Book Name</h1>
-                <h2 className="card-title text-center lg:text-2xl">{bookItem.book.name}</h2>
+                <h2 className="card-title text-center lg:ml-1 md:ml-1 ml-28 lg:text-2xl">{bookItem.book.name}</h2>
               </div>
               <div className="lg:w-[350px] md:w-[150px]">
                 <h1 className="lg:text-xl text-center font-bold lg:my-9 md:my-4 my-2">Category</h1>
