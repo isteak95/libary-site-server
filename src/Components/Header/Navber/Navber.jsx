@@ -31,8 +31,8 @@ const Navber = () => {
   };
 
   return (
-    <div className="py-10 shadow-md bg-black">
-      <div className={`navbar bg-base-100 ${theme === 'light' ? 'text-black' : ''}`}>
+    <div className="py-10 shadow-md bg-cyan-500">
+      <div className={`navbar bg-base-300 ${theme === 'light' ? 'text-black' : ''}`}>
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -59,7 +59,7 @@ const Navber = () => {
                 <NavLink
                   to="/"
                   className={({ isActive, isPending }) =>
-                    isPending ? 'pending' : isActive ? 'bg-teal-600' : ''
+                    isPending ? 'pending' : isActive ? 'bg-rose-500' : ''
                   }
                 >
                   Home
@@ -69,7 +69,7 @@ const Navber = () => {
                 <NavLink
                   to="/addbook"
                   className={({ isActive, isPending }) =>
-                    isPending ? 'pending' : isActive ? ' bg-teal-600' : ''
+                    isPending ? 'pending' : isActive ? ' bg-rose-500' : ''
                   }
                 >
                   Add Book
@@ -79,7 +79,7 @@ const Navber = () => {
                 <NavLink
                   to="/allbook"
                   className={({ isActive, isPending }) =>
-                    isPending ? 'pending' : isActive ? ' bg-teal-600' : ''
+                    isPending ? 'pending' : isActive ? ' bg-rose-500' : ''
                   }
                 >
                 All Books
@@ -89,7 +89,7 @@ const Navber = () => {
               <NavLink
                 to="/borrowedbooks"
                 className={({ isActive, isPending }) =>
-                  isPending ? 'pending' : isActive ? ' bg-teal-600' : ''
+                  isPending ? 'pending' : isActive ? ' bg-rose-500' : ''
                 }
               >
                 Borrowed Books
@@ -97,7 +97,8 @@ const Navber = () => {
             </li>
             </ul>
           </div>
-          <img className='lg:h-14 md:h-14 h-8  ' src="https://i.ibb.co/1v8yq8Q/pngwing-com-3.png" alt="pngwing-com-3" border="0" />
+          <img className='lg:h-16 lg:w-40 md:h-14 h-8  ' src="https://i.ibb.co/j3pDJvR/Pngtree-creative-combination-of-library-books-126323.png" alt="pngwing-com-3" border="0" />
+          <h1 className=' lg:text-4xl lg:font-semibold lg:mb-2  text-cyan-600'>Bang</h1>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -105,7 +106,7 @@ const Navber = () => {
               <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
-                  isPending ? 'pending' : isActive ? ' bg-teal-600' : ''
+                  isPending ? 'pending' : isActive ? ' bg-rose-500' : ''
                 }
               >
                 Home
@@ -115,7 +116,7 @@ const Navber = () => {
               <NavLink
                 to="/addbook"
                 className={({ isActive, isPending }) =>
-                  isPending ? 'pending' : isActive ? ' bg-teal-600' : ''
+                  isPending ? 'pending' : isActive ? ' bg-rose-500' : ''
                 }
               >
                 Add Book
@@ -125,7 +126,7 @@ const Navber = () => {
               <NavLink
                 to="/allbook"
                 className={({ isActive, isPending }) =>
-                  isPending ? 'pending' : isActive ? ' bg-teal-600' : ''
+                  isPending ? 'pending' : isActive ? ' bg-rose-500' : ''
                 }
               >
                 All Book
@@ -135,7 +136,7 @@ const Navber = () => {
               <NavLink
                 to="/borrowedbooks"
                 className={({ isActive, isPending }) =>
-                  isPending ? 'pending' : isActive ? ' bg-teal-600' : ''
+                  isPending ? 'pending' : isActive ? ' bg-rose-500' : ''
                 }
               >
                 Borrowed Books

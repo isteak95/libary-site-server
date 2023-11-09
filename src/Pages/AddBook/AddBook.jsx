@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import toast from 'react-hot-toast';
+import { useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
 const AddBook = () => {
   const [Category, setCategory] = useState('');
@@ -40,13 +40,13 @@ const AddBook = () => {
       .then((data) => {
         console.log(data);
 
-        toast.success(`Added ${newBook.name}  the Book`, {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
+        toast.success(`Added ${newBook.name} to the Book`, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
         });
 
         // Clear the form fields
@@ -68,15 +68,20 @@ const AddBook = () => {
   const Categorys = ['novel', 'thriller', 'history', 'drama', 'sci-fi', 'Other'];
 
   return (
-    <div className="lg:mx-[290px] lg:my-[180px] md:mx-16">
-      <div className="bg-base-300">
+    <div className="lg:mx-[290px] lg:my-[180px] md:mx-16 ">
+      <Toaster position="top-right" reverseOrder={false}    autoClose={300}
+      hideProgressBar={false}
+      closeOnClick={true}
+      pauseOnHover ={true}
+      draggable={true}/>
+      <div className=" bg-sky-700 rounded-xl ">
         <div className="">
           <div className="card w-full">
             <form onSubmit={handleBook} className="card-body">
               <div className="lg:flex gap-24 lg:my-20">
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Name</span>
+                    <span className="label-text ">Name</span>
                   </label>
                   <input
                     name="name"
@@ -90,7 +95,7 @@ const AddBook = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Category</span>
+                    <span className="label-text text-xl">Category</span>
                   </label>
                   <select
                     name="brand"
@@ -111,7 +116,7 @@ const AddBook = () => {
               <div className="lg:flex lg:gap-24">
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Author Name</span>
+                    <span className="label-text text-xl">Author Name</span>
                   </label>
                   <input
                     name="anotherName"
@@ -125,7 +130,7 @@ const AddBook = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Quantity of the book</span>
+                    <span className="label-text text-xl">Quantity of the book</span>
                   </label>
                   <input
                     name="quantity"
@@ -141,7 +146,7 @@ const AddBook = () => {
               <div className="lg:flex lg:gap-24 lg:mt-20">
                 <div className="form-control  ">
                   <label className="label ">
-                    <span className="label-text">Image</span>
+                    <span className="label-text text-xl">Image</span>
                   </label>
                   <input
                     name="image"
@@ -155,7 +160,7 @@ const AddBook = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Rating</span>
+                    <span className="label-text text-xl">Rating</span>
                   </label>
                   <input
                     name="rating"
@@ -170,7 +175,7 @@ const AddBook = () => {
               </div>
               <div className="form-control lg:my-20">
                 <label className="label">
-                  <span className="label-text">Short Description</span>
+                  <span className="label-text text-xl">Short Description</span>
                 </label>
                 <input
                   name="description"

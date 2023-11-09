@@ -9,6 +9,7 @@ import BookCategories from "../BookCategories/BookCategories";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import BrooowedBook from "../Pages/BrooowedBook/BrooowedBook";
 import ReadBook from "../Pages/ReadBook/ReadBook";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -21,15 +22,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/addbook",
-        element: <AddBook></AddBook>,
+        element: <PrivateRoute><AddBook></AddBook></PrivateRoute>,
       },
       {
         path: "/allbook",
-        element: <AllBook></AllBook>,
+        element: <PrivateRoute><AllBook></AllBook></PrivateRoute>,
       },
       {
         path: "/borrowedbooks",
-        element: <BrooowedBook></BrooowedBook>,
+        element: <PrivateRoute><BrooowedBook></BrooowedBook></PrivateRoute>,
         loader: () => fetch("http://localhost:5000/borrowbook"),
       },
       {
@@ -92,27 +93,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/novel/details/:bookId",
-        element: <BookDetails></BookDetails>,
+        element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
         loader: () => fetch("http://localhost:5000/novel"),
       },
       {
         path: "/thriller/details/:bookId",
-        element: <BookDetails></BookDetails>,
+        element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
         loader: () => fetch("http://localhost:5000/thriller"),
       },
       {
         path: "/history/details/:bookId",
-        element: <BookDetails></BookDetails>,
+        element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
         loader: () => fetch("http://localhost:5000/history"),
       },
       {
         path: "/drama/details/:bookId",
-        element: <BookDetails></BookDetails>,
+        element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
         loader: () => fetch("http://localhost:5000/drama"),
       },
       {
         path: "/sci-fi/details/:bookId",
-        element: <BookDetails></BookDetails>,
+        element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
         loader: () => fetch("http://localhost:5000/sci-fi"),
       },
     ],
